@@ -1,3 +1,4 @@
+import os
 from time import sleep
 from selenium import webdriver
 
@@ -5,11 +6,26 @@ firefox_browser = webdriver.Firefox()
 
 firefox_browser.get("https://www.instagram.com/")
 
-# Login
-login_link = firefox_browser.find_element_by_xpath("/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[3]/button")
-login_link.click()
+
+
+
+# Put Username and PassWord in their field
+sleep(2)
+username_input = firefox_browser.find_element_by_css_selector("input[name='username']")
+password_input = firefox_browser.find_element_by_css_selector("input[name='password']")
+EMAIL_USER = os.environ.get("INSTA_USER")
+EMAIL_PASS = os.environ.get("INSTA_PASS")
+
+username_input.send_keys(EMAIL_USER)
+password_input.send_keys(EMAIL_PASS)
+
+
+# Hit the Login button
+
+login_button = firefox_browser.find_element_by_xpath("//button[@type='submit']")
+login_button.click()
+
 
 sleep(5)
 firefox_browser.close()
-
 
