@@ -13,11 +13,11 @@ firefox_browser.get("https://www.instagram.com/")
 sleep(2)
 username_input = firefox_browser.find_element_by_name("username")
 password_input = firefox_browser.find_element_by_name("password")
-EMAIL_USER = os.environ.get("INSTA_USER")
-EMAIL_PASS = os.environ.get("INSTA_PASS")
+USERNAME = os.environ.get("INSTA_USER")
+PASSWORD = os.environ.get("INSTA_PASS")
 
-username_input.send_keys(EMAIL_USER)
-password_input.send_keys(EMAIL_PASS)
+username_input.send_keys(USERNAME)
+password_input.send_keys(PASSWORD)
 
 
 # Hit the Login button
