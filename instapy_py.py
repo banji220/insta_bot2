@@ -3,4 +3,6 @@ from instapy import InstaPy
 
 username = os.environ.get("INSTA_USER")
 password = os.environ.get("INSTA_PASS")
-instagram_credentials = InstaPy(username, password).login()
+my_account = InstaPy(username, password)
+my_account.login()
+my_account.like_by_tags(["BeatBox"], amount=5)
