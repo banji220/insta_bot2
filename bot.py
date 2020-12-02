@@ -11,8 +11,8 @@ firefox_browser.get("https://www.instagram.com/")
 
 # Put Username and PassWord in their field
 sleep(2)
-username_input = firefox_browser.find_element_by_css_selector("input[name='username']")
-password_input = firefox_browser.find_element_by_css_selector("input[name='password']")
+username_input = firefox_browser.find_element_by_name("username")
+password_input = firefox_browser.find_element_by_name("password")
 EMAIL_USER = os.environ.get("INSTA_USER")
 EMAIL_PASS = os.environ.get("INSTA_PASS")
 
