@@ -14,8 +14,6 @@ def config_setting():
     session = InstaPy(username=insta_user, password=insta_pass, headless_browser=False, multi_logs=False,).login()
     return session
 
-
-
 # Follow Users
 def follow():
     session = config_setting()
@@ -39,5 +37,4 @@ def follow():
                 
             except Exception as e:
                 print("Error")
-        
 follow()
