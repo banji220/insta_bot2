@@ -1,8 +1,16 @@
 import os
 from instapy import InstaPy
+from instapy import smart_run
+from selenium import webdriver
+import time
+from datetime import datetime
+import schedule
+import traceback
+import requests
 
-username = os.environ.get("INSTA_USER")
-password = os.environ.get("INSTA_PASS")
-my_account = InstaPy(username, password)
-my_account.login()
-my_account.like_by_tags(["BeatBox"], amount=5)
+# My Instagram Username and Password
+insta_user = os.environ.get('INSTA_USER')
+insta_pass = os.environ.get('INST_PASS')
+def start_session():
+    config_setting = InstaPy(username=insta_user, password=insta_pass, headless_browser=False, nogui=True, multi_logs=False)
+    return config_setting
