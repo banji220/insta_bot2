@@ -37,6 +37,15 @@ def follow_hashtag_base():
                 
                 # Activity
                 session.follow_by_tags(tags=["بورس"], amount=5)
+                session.unfollow_users(amount=25,
+                                       style="RANDOM",
+                                       unfllow_after=48*60*60,
+                                       nonFollowers=True,
+                                       custom_list_enabled=False,
+                                       allFollowing=False,
+                                       instapy_followed_enabled=False, 
+                                       sleep_delay=600
+                                       )
                 
             except Exception as e:
                 print(traceback.format_exc())
