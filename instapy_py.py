@@ -56,11 +56,13 @@ def unfollow():
     with smart_run(session):
         try:
             # Setting
-            session.set_relationship_bounds()
+            session.set_relationship_bounds(enabled=False, potency_ratio=1.25)
+
+            # Activity
+
+            session.unfollow_users(amount=600, nonFollowers=True, style="RANDOM")
     
-    
-    
-    
+
 follow_hashtag_base()
 
 
